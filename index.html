@@ -13,8 +13,8 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --bg:    #021A0E;
-  --bg2:   #032B16;
-  --bg3:   #063B1E;
+  --bg2:   #063B1E;
+  --bg3:   #0B5228;
   --brn:   #18130F;
   --brn2:  #231E18;
   --gold:  #D4A84B;
@@ -78,9 +78,9 @@ background:radial-gradient(ellipse 120% 90% at 50% 40%,var(--bg3) 0%,var(--bg) 6
 @keyframes orbf{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-30px) scale(1.05)}66%{transform:translate(-28px,38px) scale(.97)}}
 .h-dots{position:absolute;inset:0;z-index:1;pointer-events:none;
 background-image:radial-gradient(circle,rgba(212,168,75,.05) 1px,transparent 1px);background-size:28px 28px}
-.h-content{position:relative;z-index:2;padding:80px 24px;display:flex;flex-direction:column;align-items:center}
-.h-eyebrow{font-size:10px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:40px}
-.h-lockup{display:flex;align-items:center;gap:28px;flex-wrap:wrap;justify-content:center;margin-bottom:40px;position:relative}
+.h-content{position:relative;z-index:2;padding:110px 24px 100px;display:flex;flex-direction:column;align-items:center}
+.h-eyebrow{font-size:10px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:52px}
+.h-lockup{display:flex;align-items:center;gap:28px;flex-wrap:wrap;justify-content:center;margin-bottom:56px;position:relative}
 .h-lockup::after{content:'';position:absolute;width:500px;height:130px;left:50%;top:50%;transform:translate(-50%,-50%);
 border-radius:50%;background:radial-gradient(ellipse,rgba(212,168,75,.09),transparent 70%);
 pointer-events:none;animation:haloPulse 4s ease-in-out infinite}
@@ -89,7 +89,7 @@ pointer-events:none;animation:haloPulse 4s ease-in-out infinite}
 .h-x{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(36px,5.5vw,64px);color:var(--gold);line-height:1}
 .h-klinta{height:clamp(36px,5.5vw,70px);object-fit:contain;filter:brightness(0) invert(1) drop-shadow(0 0 16px rgba(255,255,255,.1))}
 .h-tagline{font-family:'Playfair Display',serif;font-size:clamp(24px,3.8vw,48px);font-weight:400;line-height:1.2;
-max-width:720px;margin-bottom:20px}
+max-width:720px;margin-bottom:56px}
 .h-tagline em{font-style:italic;color:var(--gold)}
 .h-sub{font-size:clamp(14px,1.5vw,16px);line-height:1.8;color:var(--muted);max-width:520px;margin-bottom:52px}
 .h-scroll{display:flex;flex-direction:column;align-items:center;gap:7px;opacity:.7}
@@ -331,7 +331,6 @@ position:relative;overflow:hidden;transition:color .35s}
       <img class="h-klinta" src="https://klintaco.se/wp-content/uploads/2025/04/cropped-logga-klinta-1-scaled.avif" alt="Klinta"/>
     </div>
     <h1 class="h-tagline">Era doftljus, <em>vårt hem.</em><br>164 000 husägare som följer med.</h1>
-    <p class="h-sub">Autentiskt innehåll i en riktig villamiljö — professionella bilder, video och exponering hos en av Sveriges mest engagerade villa- och trädgårdsprofiler. Innehåll ni äger.</p>
     <div class="h-scroll" aria-hidden="true">
       <span>Utforska</span>
       <div class="h-line"></div>
