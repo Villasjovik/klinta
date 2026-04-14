@@ -35,9 +35,9 @@ background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='htt
 background-size:160px 160px;opacity:.025}
 
 /* CURSOR */
-#cur,#cur-r{position:fixed;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}
+#cur,#cur-r{position:fixed;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);opacity:0;transition:opacity .5s ease}
 #cur{width:8px;height:8px;background:var(--gold)}
-#cur-r{width:36px;height:36px;border:1.5px solid var(--gold);transition:width .3s var(--ease),height .3s var(--ease),border-radius .3s}
+#cur-r{width:36px;height:36px;border:1.5px solid var(--gold);transition:width .3s var(--ease),height .3s var(--ease),border-radius .3s,opacity .5s ease}
 body.ch #cur-r{width:58px;height:58px}
 body.ct #cur-r{width:2px;height:26px;border-radius:2px}
 @media(pointer:coarse){#cur,#cur-r{display:none}}
@@ -97,23 +97,26 @@ max-width:720px;margin-bottom:20px}
 .h-line{width:1px;height:44px;background:linear-gradient(180deg,var(--gold),transparent);animation:lb 2s ease-in-out infinite}
 @keyframes lb{0%,100%{transform:scaleY(1);opacity:.7}50%{transform:scaleY(.55);opacity:1}}
 
-/* ══ MARQUEE ═══════════════════════════════════ */
+/* ══ PARTNERS TICKER ════════════════════════════ */
 #sec-mq{
-  background:radial-gradient(ellipse 80% 120% at 50% 50%,#021508 0%,#010C05 100%);
+  background:#010C05;
   border-top:1px solid rgba(212,168,75,.3);
   border-bottom:1px solid rgba(212,168,75,.3);
-  padding:26px 0;overflow:hidden;position:relative
+  padding:32px 0 36px;overflow:hidden;position:relative
 }
 #sec-mq::before{
   content:'';position:absolute;inset:0;pointer-events:none;z-index:2;
-  background:linear-gradient(90deg,#010C05 0%,transparent 9%,transparent 91%,#010C05 100%)
+  background:linear-gradient(90deg,#010C05 0%,transparent 10%,transparent 90%,#010C05 100%)
 }
-.mq-track{display:flex;align-items:center;width:max-content;animation:mqs 24s linear infinite;will-change:transform;position:relative;z-index:3}
-.mq-track:hover{animation-play-state:paused}
-.mq-item{display:flex;align-items:center;gap:26px;padding:0 26px;white-space:nowrap}
-.mq-t{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(18px,2.2vw,30px);color:rgba(242,237,228,.38);letter-spacing:.01em}
-.mq-t.g{color:var(--gold);text-shadow:0 0 30px rgba(212,168,75,.45)}
-.mq-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);opacity:.38;flex-shrink:0}
+.mq-head{text-align:center;padding-bottom:22px;position:relative;z-index:3}
+.mq-lbl{font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:rgba(212,168,75,.55);font-weight:600}
+.ticker-wrap{overflow:hidden;position:relative;z-index:3}
+.ticker-track{display:flex;align-items:center;width:max-content;animation:mqs 44s linear infinite;will-change:transform}
+.ticker-track:hover{animation-play-state:paused}
+.ticker-item{width:180px;height:68px;flex-shrink:0;display:flex;align-items:center;justify-content:center;padding:0 26px}
+.ticker-logo{max-width:130px;max-height:46px;width:auto;height:auto;object-fit:contain;
+filter:brightness(0) invert(1);opacity:.45;transition:opacity .35s;display:block}
+.ticker-item:hover .ticker-logo{opacity:.85}
 @keyframes mqs{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* ══ PROFIL ════════════════════════════════════ */
@@ -140,9 +143,10 @@ background:linear-gradient(90deg,transparent,var(--gold),transparent);transform:
 .sc-sub{font-size:10px;color:rgba(212,168,75,.5);margin-top:4px;letter-spacing:.06em}
 .sc-lbl{margin-top:8px;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
 .profil-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:48px}
-.gc{background:rgba(255,255,255,.04);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
-border:1px solid rgba(255,255,255,.09);border-top:1px solid rgba(212,168,75,.2);border-radius:18px;
-padding:36px 32px;transition:border-color .3s,box-shadow .3s,transform .35s var(--ease)}
+.gc{background:rgba(212,168,75,.045);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+border:1px solid rgba(212,168,75,.22);border-top:2px solid rgba(212,168,75,.45);border-radius:18px;
+padding:36px 32px;transition:border-color .3s,box-shadow .3s,transform .35s var(--ease);
+box-shadow:0 12px 40px rgba(0,0,0,.25)}
 .gc:hover{border-color:rgba(212,168,75,.35);box-shadow:0 24px 60px rgba(0,0,0,.3);transform:translateY(-4px)}
 .gc h3{font-family:'Playfair Display',serif;font-size:19px;font-weight:500;margin-bottom:12px}
 .gc p{font-size:14px;line-height:1.85;color:var(--muted)}
@@ -154,8 +158,9 @@ padding:36px 32px;transition:border-color .3s,box-shadow .3s,transform .35s var(
 .lev-orb-1{width:600px;height:600px;background:radial-gradient(circle,rgba(1,142,71,.14),transparent);top:-160px;right:-120px;animation:orbf 26s ease-in-out infinite}
 .lev-inner{position:relative;z-index:1;max-width:980px;margin:0 auto}
 .lev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
-.lc{padding:42px 32px;border:1px solid var(--bdr);border-radius:20px;background:rgba(255,255,255,.035);
-position:relative;overflow:hidden;transition:border-color .3s,box-shadow .3s,transform .4s var(--ease)}
+.lc{padding:42px 32px;border:1px solid rgba(212,168,75,.22);border-radius:20px;background:rgba(212,168,75,.05);
+position:relative;overflow:hidden;transition:border-color .3s,box-shadow .3s,transform .4s var(--ease);
+box-shadow:0 16px 48px rgba(0,0,0,.3)}
 .lc::before{content:'';position:absolute;inset:0;border-radius:20px;
 background:radial-gradient(circle at 50% 0%,rgba(212,168,75,.09),transparent 70%);opacity:0;transition:opacity .35s}
 .lc:hover::before{opacity:1}
@@ -183,10 +188,10 @@ z-index:2;pointer-events:none;text-align:center;padding:0 24px}
 .px-hl em{font-style:italic;color:var(--gold)}
 
 /* ══ PRICING ════════════════════════════════════ */
-#sec-pr{position:relative;background:radial-gradient(ellipse 110% 85% at 50% 50%,var(--bg3) 0%,var(--bg) 70%);padding:96px 24px;overflow:hidden}
+#sec-pr{position:relative;background:linear-gradient(145deg,var(--brn) 0%,var(--brn2) 50%,var(--brn) 100%);padding:96px 24px;overflow:hidden}
 .pr-inner{position:relative;z-index:1;max-width:980px;margin:0 auto}
 .pr-orb{position:absolute;border-radius:50%;filter:blur(120px);pointer-events:none}
-.pr-orb-1{width:500px;height:500px;background:radial-gradient(circle,rgba(1,142,71,.18),transparent);top:-150px;right:-100px;animation:orbf 26s ease-in-out infinite}
+.pr-orb-1{width:500px;height:500px;background:radial-gradient(circle,rgba(212,168,75,.12),transparent);top:-150px;right:-100px;animation:orbf 26s ease-in-out infinite}
 .price-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:52px}
 .price-box.wide{grid-column:1/-1;max-width:680px;margin-left:auto;margin-right:auto;width:100%}
 .price-box{border:1px solid rgba(212,168,75,.2);border-radius:22px;
@@ -331,26 +336,31 @@ position:relative;overflow:hidden;transition:color .35s}
 
 <div class="gd"></div>
 
-<!-- MARQUEE -->
-<div id="sec-mq" aria-hidden="true">
-  <div class="mq-track">
-    <div class="mq-item"><span class="mq-t g">164 000 följare</span><div class="mq-dot"></div></div>
-    <div class="mq-item"><span class="mq-t">Professionella miljö- &amp; produktbilder</span><div class="mq-dot"></div></div>
-    <div class="mq-item"><span class="mq-t g">Villa Sjövik &times; Klinta</span><div class="mq-dot"></div></div>
-    <div class="mq-item"><span class="mq-t">Full nyttjanderätt för Klinta</span><div class="mq-dot"></div></div>
-    <div class="mq-item"><span class="mq-t g">Reels + Stories + Bilder</span><div class="mq-dot"></div></div>
-    <div class="mq-item"><span class="mq-t">Äkta hem. Äkta stämning.</span><div class="mq-dot"></div></div>
-    <div class="mq-item"><span class="mq-t g">Husägare 35-65</span><div class="mq-dot"></div></div>
-    <div class="mq-item"><span class="mq-t">Villa Sjövik producerar allt</span><div class="mq-dot"></div></div>
-    <!-- dup -->
-    <div class="mq-item"><span class="mq-t g">164 000 följare</span><div class="mq-dot"></div></div>
-    <div class="mq-item"><span class="mq-t">Professionella miljö- &amp; produktbilder</span><div class="mq-dot"></div></div>
-    <div class="mq-item"><span class="mq-t g">Villa Sjövik &times; Klinta</span><div class="mq-dot"></div></div>
-    <div class="mq-item"><span class="mq-t">Full nyttjanderätt för Klinta</span><div class="mq-dot"></div></div>
-    <div class="mq-item"><span class="mq-t g">Reels + Stories + Bilder</span><div class="mq-dot"></div></div>
-    <div class="mq-item"><span class="mq-t">Äkta hem. Äkta stämning.</span><div class="mq-dot"></div></div>
-    <div class="mq-item"><span class="mq-t g">Husägare 35-65</span><div class="mq-dot"></div></div>
-    <div class="mq-item"><span class="mq-t">Villa Sjövik producerar allt</span><div class="mq-dot"></div></div>
+<!-- ══ PARTNERS TICKER ══════════════════════════════ -->
+<div id="sec-mq">
+  <div class="mq-head rv">
+    <span class="mq-lbl">Tidigare samarbeten</span>
+  </div>
+  <div class="ticker-wrap">
+    <div class="ticker-track">
+      <div class="ticker-item"><img src="https://villasjovik.github.io/velux/logos/lexington.png" alt="Lexington" class="ticker-logo"></div>
+      <div class="ticker-item"><img src="https://villasjovik.github.io/velux/logos/segway.png" alt="Segway" class="ticker-logo"></div>
+      <div class="ticker-item"><img src="https://villasjovik.github.io/velux/logos/nuura.png" alt="Nuura" class="ticker-logo"></div>
+      <div class="ticker-item"><img src="https://villasjovik.github.io/velux/logos/mille_notti.avif" alt="Mille Notti" class="ticker-logo"></div>
+      <div class="ticker-item"><img src="https://villasjovik.github.io/velux/logos/tinekhome.jpg" alt="TineK Home" class="ticker-logo"></div>
+      <div class="ticker-item"><img src="https://villasjovik.github.io/velux/logos/markslojd.avif" alt="Markslöjd" class="ticker-logo"></div>
+      <div class="ticker-item"><img src="https://villasjovik.github.io/velux/logos/vedum.png" alt="Vedum" class="ticker-logo"></div>
+      <div class="ticker-item"><img src="https://villasjovik.github.io/velux/logos/husqvarna.jpg" alt="Husqvarna" class="ticker-logo"></div>
+      <!-- dup för sömlös loop -->
+      <div class="ticker-item" aria-hidden="true"><img src="https://villasjovik.github.io/velux/logos/lexington.png" alt="" class="ticker-logo"></div>
+      <div class="ticker-item" aria-hidden="true"><img src="https://villasjovik.github.io/velux/logos/segway.png" alt="" class="ticker-logo"></div>
+      <div class="ticker-item" aria-hidden="true"><img src="https://villasjovik.github.io/velux/logos/nuura.png" alt="" class="ticker-logo"></div>
+      <div class="ticker-item" aria-hidden="true"><img src="https://villasjovik.github.io/velux/logos/mille_notti.avif" alt="" class="ticker-logo"></div>
+      <div class="ticker-item" aria-hidden="true"><img src="https://villasjovik.github.io/velux/logos/tinekhome.jpg" alt="" class="ticker-logo"></div>
+      <div class="ticker-item" aria-hidden="true"><img src="https://villasjovik.github.io/velux/logos/markslojd.avif" alt="" class="ticker-logo"></div>
+      <div class="ticker-item" aria-hidden="true"><img src="https://villasjovik.github.io/velux/logos/vedum.png" alt="" class="ticker-logo"></div>
+      <div class="ticker-item" aria-hidden="true"><img src="https://villasjovik.github.io/velux/logos/husqvarna.jpg" alt="" class="ticker-logo"></div>
+    </div>
   </div>
 </div>
 
@@ -515,10 +525,6 @@ position:relative;overflow:hidden;transition:color .35s}
       </div>
     </div>
 
-    <div class="guarantee-bar rv">
-      <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      <p>Är ni inte nöjda med materialet <span>betalar ni inte.</span> Vi granskar tillsammans före publicering.</p>
-    </div>
   </div>
 </section>
 
@@ -558,7 +564,10 @@ position:relative;overflow:hidden;transition:color .35s}
 'use strict';
 
 /* ── CURTAIN ── */
-setTimeout(()=>document.body.classList.add('ready'), 900);
+setTimeout(()=>{
+  document.body.classList.add('ready');
+  setTimeout(()=>{dot.style.opacity='1';ring.style.opacity='1';},1400);
+},900);
 
 /* ── BODY LOADED ── */
 requestAnimationFrame(()=>document.body.classList.add('body-loaded'));
@@ -645,14 +654,32 @@ const cuObs=new IntersectionObserver(es=>es.forEach(e=>{
 document.querySelectorAll('.cu').forEach(el=>cuObs.observe(el));
 
 /* ── 3D TILT ── */
-document.querySelectorAll('.gc,.lc,.price-box').forEach(card=>{
+const lcCards=document.querySelectorAll('.lev-grid .lc');
+// Default tilt on outer lc cards when they enter view
+if(lcCards.length>=3){
+  const tiltInitObs=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        gsap.to(lcCards[0],{rotateY:7,rotateX:-1,transformPerspective:1200,duration:.9,ease:'power2.out',delay:.2});
+        gsap.to(lcCards[2],{rotateY:-7,rotateX:-1,transformPerspective:1200,duration:.9,ease:'power2.out',delay:.4});
+        tiltInitObs.unobserve(e.target);
+      }
+    });
+  },{threshold:.25});
+  tiltInitObs.observe(lcCards[0]);
+}
+document.querySelectorAll('.gc,.lc,.price-box').forEach((card,i)=>{
+  const isLc=card.classList.contains('lc');
+  const lcArr=Array.from(lcCards);
+  const lcIdx=lcArr.indexOf(card);
+  const defRY=isLc&&lcIdx===0?7:isLc&&lcIdx===2?-7:0;
   card.addEventListener('mousemove',e=>{
     const r=card.getBoundingClientRect();
     const x=(e.clientX-r.left)/r.width-.5;
     const y=(e.clientY-r.top)/r.height-.5;
-    gsap.to(card,{rotateY:x*10,rotateX:-y*10,transformPerspective:900,duration:.4,ease:'power2.out'});
+    gsap.to(card,{rotateY:x*12,rotateX:-y*10,transformPerspective:1000,duration:.12,ease:'power2.out',overwrite:'auto'});
   });
-  card.addEventListener('mouseleave',()=>gsap.to(card,{rotateY:0,rotateX:0,duration:.6,ease:'elastic.out(1,.5)'}));
+  card.addEventListener('mouseleave',()=>gsap.to(card,{rotateY:defRY,rotateX:defRY!==0?-1:0,duration:.6,ease:'elastic.out(1,.4)',overwrite:'auto'}));
 });
 
 /* ── MOUSE-FOLLOW GLOW ── */
