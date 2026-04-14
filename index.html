@@ -174,12 +174,12 @@ border-radius:100px;font-size:9px;letter-spacing:.14em;text-transform:uppercase;
 @media(max-width:800px){.lev-grid{grid-template-columns:1fr}}
 
 /* ══ PARALLAX TEXT ══════════════════════════════ */
-#sec-px{background:var(--bg2);padding:160px 0;overflow:hidden;position:relative;min-height:420px}
-.px-row{font-family:'Playfair Display',serif;font-size:clamp(28px,3.8vw,56px);
-font-weight:400;line-height:1;white-space:nowrap;will-change:transform;margin-bottom:40px}
-.px-row.go{color:var(--gold)}
-.px-row.ou{color:transparent;-webkit-text-stroke:1px rgba(212,168,75,.42)}
-.px-row.dm{color:rgba(242,237,228,.07)}
+#sec-px{background:var(--bg2);overflow:hidden;position:relative;min-height:480px}
+.px-row{position:absolute;left:0;right:0;font-family:'Playfair Display',serif;font-size:clamp(28px,3.8vw,56px);
+font-weight:400;line-height:1;white-space:nowrap;will-change:transform}
+.px-row.go{color:rgba(212,168,75,.28);top:44px}
+.px-row.ou{color:transparent;-webkit-text-stroke:1px rgba(212,168,75,.28);bottom:44px}
+.px-row.dm{display:none}
 .px-mid{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
 z-index:2;pointer-events:none;text-align:center;padding:0 24px}
 .px-tag{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
