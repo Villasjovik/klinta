@@ -99,39 +99,24 @@ max-width:720px;margin-bottom:20px}
 
 /* ══ PARTNERS TICKER ════════════════════════════ */
 #sec-mq{
-  background:#071813;
-  border-top:1px solid rgba(212,168,75,.25);
-  border-bottom:1px solid rgba(212,168,75,.25);
-  padding:32px 0 40px;overflow:hidden;position:relative
+  background:#EDE8DC;
+  border-top:2px solid rgba(212,168,75,.45);
+  border-bottom:2px solid rgba(212,168,75,.45);
+  padding:28px 0 36px;overflow:hidden;position:relative
 }
 #sec-mq::before{
   content:'';position:absolute;inset:0;pointer-events:none;z-index:2;
-  background:linear-gradient(90deg,#071813 0%,transparent 12%,transparent 88%,#071813 100%)
+  background:linear-gradient(90deg,#EDE8DC 0%,transparent 10%,transparent 90%,#EDE8DC 100%)
 }
-#sec-mq::after{
-  content:'';position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);
-  height:60px;pointer-events:none;z-index:1;
-  background:radial-gradient(ellipse 70% 100% at 50% 50%,rgba(212,168,75,.04),transparent)
-}
-.mq-head{text-align:center;padding-bottom:24px;position:relative;z-index:3}
-.mq-lbl{font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:rgba(212,168,75,.55);font-weight:600}
+.mq-head{text-align:center;padding-bottom:20px;position:relative;z-index:3}
+.mq-lbl{font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:rgba(24,19,15,.45);font-weight:600}
 .ticker-wrap{overflow:hidden;position:relative;z-index:3}
 .ticker-track{display:flex;align-items:center;width:max-content;animation:mqs 44s linear infinite;will-change:transform}
 .ticker-track:hover{animation-play-state:paused}
-.ticker-item{height:72px;flex-shrink:0;display:flex;align-items:center;justify-content:center;
-  padding:0 20px 0 20px;margin:0 6px;
-  background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.07);
-  border-radius:10px;transition:background .3s,border-color .3s}
-.ticker-item:hover{background:rgba(255,255,255,.09);border-color:rgba(212,168,75,.2)}
-.ticker-logo{max-width:120px;max-height:40px;width:auto;height:auto;object-fit:contain;
-  opacity:.7;transition:opacity .3s;display:block}
+.ticker-item{width:160px;height:60px;flex-shrink:0;display:flex;align-items:center;justify-content:center;padding:0 24px}
+.ticker-logo{width:100%;height:36px;object-fit:contain;opacity:.7;transition:opacity .3s;display:block}
 .ticker-item:hover .ticker-logo{opacity:1}
 @keyframes mqs{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-
-/* ══ CURTAIN LOGOS ══════════════════════════════ */
-.cc-partners{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;
-  margin-top:18px;opacity:0;animation:curtX .6s .65s var(--ease) forwards}
-.cc-plogo{height:18px;object-fit:contain;filter:brightness(0) invert(1);opacity:.35}
 
 /* ══ PROFIL ════════════════════════════════════ */
 #sec-profil{position:relative;background:radial-gradient(ellipse 110% 85% at 50% 30%,var(--bg3) 0%,var(--bg) 65%);padding:96px 24px;overflow:hidden}
@@ -221,6 +206,9 @@ box-shadow:0 8px 48px rgba(212,168,75,.1);animation:pring 3.5s ease-in-out infin
 font-size:9px;letter-spacing:.18em;text-transform:uppercase}
 .price-badge.std{background:rgba(255,255,255,.06);color:var(--muted);border:1px solid rgba(255,255,255,.1)}
 .price-badge.pop{background:rgba(212,168,75,.12);color:var(--gold);border:1px solid rgba(212,168,75,.35)}
+.price-badge-recommended{display:inline-block;margin-left:10px;margin-bottom:20px;padding:5px 14px;border-radius:100px;
+font-size:9px;letter-spacing:.14em;text-transform:uppercase;vertical-align:middle;
+background:var(--gold);color:#18130F;font-weight:700;border:none}
 .price-total-lbl{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
 .price-total{font-family:'Playfair Display',serif;font-size:clamp(44px,7vw,80px);font-weight:500;color:var(--ink);line-height:1}
 .price-unit{font-family:'Inter',sans-serif;font-size:14px;font-weight:300;color:var(--muted);display:block;margin-top:8px}
@@ -324,14 +312,6 @@ position:relative;overflow:hidden;transition:color .35s}
   <img class="cl" src="https://raw.githubusercontent.com/Villasjovik/thefriendlyhome/main/villasjovik_logga.webp" alt="Villa Sjövik"/>
   <span class="cx">&times;</span>
   <span class="cl-brand">Klinta</span>
-  <div class="cc-partners">
-    <img class="cc-plogo" src="https://villasjovik.github.io/velux/logos/lexington.png" alt="Lexington">
-    <img class="cc-plogo" src="https://villasjovik.github.io/velux/logos/segway.png" alt="Segway">
-    <img class="cc-plogo" src="https://villasjovik.github.io/velux/logos/nuura.png" alt="Nuura">
-    <img class="cc-plogo" src="https://villasjovik.github.io/velux/logos/mille_notti.avif" alt="Mille Notti">
-    <img class="cc-plogo" src="https://villasjovik.github.io/velux/logos/tinekhome.jpg" alt="TineK Home">
-    <img class="cc-plogo" src="https://villasjovik.github.io/velux/logos/vedum.png" alt="Vedum">
-  </div>
 </div>
 
 <div id="pwrap">
@@ -433,8 +413,8 @@ position:relative;overflow:hidden;transition:color .35s}
         <p>Ni får inte bara exponering i Villa Sjöviks kanaler — ni far också professionella miljö- och produktbilder med full nyttjanderätt att använda i era egna kanaler, på er webbshop, i nyhetsbrev och i tryckt material.</p>
       </div>
       <div class="gc rv d4">
-        <h3>Vi producerar allt</h3>
-        <p>Ni skickar produkterna. Vi tar hand om resten — koncept, styling, filmning, redigering, publicering. Ni granskar och godkänner innan publicering. Är ni inte nöjda betalar ni inte.</p>
+        <h3>Jag producerar allt</h3>
+        <p>Ni skickar produkterna. Jag tar hand om resten — koncept, styling, filmning, redigering, publicering. Ni granskar och godkänner innan publicering.</p>
       </div>
     </div>
   </div>
@@ -494,7 +474,7 @@ position:relative;overflow:hidden;transition:color .35s}
   <div class="pr-orb pr-orb-1" aria-hidden="true"></div>
   <div class="pr-inner">
     <p class="sec-lbl rv">Investering</p>
-    <h2 class="sec-h2 rv">Ni levererar ljusen. <br><em>Vi levererar resten.</em></h2>
+    <h2 class="sec-h2 rv">Ni levererar ljusen. <br><em>Jag levererar resten.</em></h2>
 
     <div class="price-grid">
       <!-- Engångspaket -->
@@ -533,10 +513,11 @@ position:relative;overflow:hidden;transition:color .35s}
       <!-- 6-månaders avtal (featured) -->
       <div class="price-box featured wide rv d3">
         <span class="price-badge pop">6-månaders avtal</span>
+        <span class="price-badge-recommended">&#10003; Mest värde</span>
         <p class="price-total-lbl">Löpande samarbete &middot; 1 publicering / månad</p>
-        <p class="price-total">13 000</p>
-        <p class="price-unit">kr/mån exkl. moms &nbsp;&middot;&nbsp; 78 000 kr totalt</p>
-        <p class="price-save">Spara 33 000 kr jmf. 6 &times; engångspaket</p>
+        <p class="price-total">14 500</p>
+        <p class="price-unit">kr/mån exkl. moms &nbsp;&middot;&nbsp; 87 000 kr totalt</p>
+        <p class="price-save">Spara 24 000 kr jmf. 6 &times; engångspaket</p>
         <div class="price-includes">
           <p class="pi hi">1 Reel + 10 bilder + 2 Stories — varje månad i 6 månader</p>
           <p class="pi hi">Totalt: 6 Reels &middot; 60 bilder &middot; 12 Stories</p>
@@ -561,10 +542,10 @@ position:relative;overflow:hidden;transition:color .35s}
   <div class="cta-inner">
     <p class="cta-tag rv">Nästa steg</p>
     <h2 class="rv">
-      <span class="cta-l1">Hör av</span><br>
-      <em class="cta-l2">er.</em>
+      <span class="cta-l1">Redo att</span><br>
+      <em class="cta-l2">sätta igång?</em>
     </h2>
-    <p class="cta-sub rv">Vi berättar gärna mer om hur samarbetet kan se ut — och anpassar paketet efter era behov.</p>
+    <p class="cta-sub rv">Jag berättar gärna mer om hur samarbetet kan se ut — och anpassar paketet efter era behov.</p>
     <div class="mag-w rv">
       <a class="mag-btn ch" href="mailto:carin@villasjovik.se?subject=Klinta%20×%20Villa%20Sjövik%20—%20Samarbete%202026">
         <span>Skicka mail &rarr;</span>
