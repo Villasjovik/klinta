@@ -206,9 +206,11 @@ box-shadow:0 8px 48px rgba(212,168,75,.1);animation:pring 3.5s ease-in-out infin
 font-size:9px;letter-spacing:.18em;text-transform:uppercase}
 .price-badge.std{background:rgba(255,255,255,.06);color:var(--muted);border:1px solid rgba(255,255,255,.1)}
 .price-badge.pop{background:rgba(212,168,75,.12);color:var(--gold);border:1px solid rgba(212,168,75,.35)}
-.price-badge-recommended{display:inline-block;margin-left:10px;margin-bottom:20px;padding:5px 14px;border-radius:100px;
-font-size:9px;letter-spacing:.14em;text-transform:uppercase;vertical-align:middle;
-background:var(--gold);color:#18130F;font-weight:700;border:none}
+.price-badge-recommended{position:absolute;top:-16px;left:50%;transform:translateX(-50%);
+padding:6px 18px;border-radius:100px;white-space:nowrap;
+font-size:9px;letter-spacing:.16em;text-transform:uppercase;
+background:var(--gold);color:#18130F;font-weight:700;border:none;
+box-shadow:0 4px 16px rgba(212,168,75,.35)}
 .price-total-lbl{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
 .price-total{font-family:'Playfair Display',serif;font-size:clamp(44px,7vw,80px);font-weight:500;color:var(--ink);line-height:1}
 .price-unit{font-family:'Inter',sans-serif;font-size:14px;font-weight:300;color:var(--muted);display:block;margin-top:8px}
@@ -512,8 +514,8 @@ position:relative;overflow:hidden;transition:color .35s}
 
       <!-- 6-månaders avtal (featured) -->
       <div class="price-box featured wide rv d3">
-        <span class="price-badge pop">6-månaders avtal</span>
         <span class="price-badge-recommended">&#10003; Mest värde</span>
+        <span class="price-badge pop">6-månaders avtal</span>
         <p class="price-total-lbl">Löpande samarbete &middot; 1 publicering / månad</p>
         <p class="price-total">14 500</p>
         <p class="price-unit">kr/mån exkl. moms &nbsp;&middot;&nbsp; 87 000 kr totalt</p>
