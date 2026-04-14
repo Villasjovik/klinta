@@ -55,7 +55,7 @@ body.ready .cp:last-child{transform:translateX(101%);transition-delay:1.15s}
 body.ready #cc{opacity:0}
 .cl{height:clamp(48px,7vw,88px);object-fit:contain;filter:brightness(0) invert(1) opacity(.9);opacity:0;animation:curtX .6s .05s var(--ease) forwards}
 .cx{font-family:'Playfair Display',serif;font-style:italic;color:var(--gold);font-size:clamp(32px,5vw,60px);line-height:1;opacity:0;animation:curtX .6s .25s var(--ease) forwards}
-.cl-brand{font-family:'Playfair Display',serif;font-size:clamp(28px,4.5vw,52px);font-weight:500;color:var(--ink);letter-spacing:.04em;opacity:0;animation:curtX .6s .45s var(--ease) forwards}
+.cl-k{height:clamp(18px,2.5vw,30px);object-fit:contain;filter:brightness(0) invert(1) opacity(.9);opacity:0;animation:curtX .6s .45s var(--ease) forwards}
 @keyframes curtX{from{opacity:0;transform:scale(.88)}to{opacity:1;transform:scale(1)}}
 
 /* SIDENAV */
@@ -86,8 +86,8 @@ border-radius:50%;background:radial-gradient(ellipse,rgba(212,168,75,.09),transp
 pointer-events:none;animation:haloPulse 4s ease-in-out infinite}
 @keyframes haloPulse{0%,100%{opacity:.5;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.1)}}
 .h-vs{height:clamp(52px,8vw,100px);object-fit:contain;filter:brightness(0) invert(1) drop-shadow(0 0 20px rgba(255,255,255,.12))}
-.h-x{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(36px,5.5vw,64px);color:var(--gold);line-height:1}
-.h-klinta{height:clamp(36px,5.5vw,70px);object-fit:contain;filter:brightness(0) invert(1) drop-shadow(0 0 16px rgba(255,255,255,.1))}
+.h-x{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(28px,4vw,52px);color:var(--gold);line-height:1;flex-shrink:0;align-self:center}
+.h-klinta{height:clamp(18px,2.5vw,33px);object-fit:contain;filter:brightness(0) invert(1) drop-shadow(0 0 16px rgba(255,255,255,.1))}
 .h-tagline{font-family:'Playfair Display',serif;font-size:clamp(24px,3.8vw,48px);font-weight:400;line-height:1.2;
 max-width:720px;margin-bottom:56px}
 .h-tagline em{font-style:italic;color:var(--gold)}
@@ -174,7 +174,7 @@ border-radius:100px;font-size:9px;letter-spacing:.14em;text-transform:uppercase;
 @media(max-width:800px){.lev-grid{grid-template-columns:1fr}}
 
 /* ══ PARALLAX TEXT ══════════════════════════════ */
-#sec-px{background:#030E07;padding:160px 0;overflow:hidden;position:relative;min-height:420px}
+#sec-px{background:var(--bg2);padding:160px 0;overflow:hidden;position:relative;min-height:420px}
 .px-row{font-family:'Playfair Display',serif;font-size:clamp(28px,3.8vw,56px);
 font-weight:400;line-height:1;white-space:nowrap;will-change:transform;margin-bottom:40px}
 .px-row.go{color:var(--gold)}
@@ -313,7 +313,7 @@ position:relative;overflow:hidden;transition:color .35s}
 <div id="cc" aria-hidden="true">
   <img class="cl" src="https://raw.githubusercontent.com/Villasjovik/thefriendlyhome/main/villasjovik_logga.webp" alt="Villa Sjövik"/>
   <span class="cx">&times;</span>
-  <span class="cl-brand">Klinta</span>
+  <img class="cl-k" src="https://klintaco.se/wp-content/uploads/2025/04/cropped-logga-klinta-1-scaled.avif" alt="Klinta"/>
 </div>
 
 <div id="pwrap">
