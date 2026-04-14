@@ -99,25 +99,39 @@ max-width:720px;margin-bottom:20px}
 
 /* ══ PARTNERS TICKER ════════════════════════════ */
 #sec-mq{
-  background:#010C05;
-  border-top:1px solid rgba(212,168,75,.3);
-  border-bottom:1px solid rgba(212,168,75,.3);
-  padding:32px 0 36px;overflow:hidden;position:relative
+  background:#071813;
+  border-top:1px solid rgba(212,168,75,.25);
+  border-bottom:1px solid rgba(212,168,75,.25);
+  padding:32px 0 40px;overflow:hidden;position:relative
 }
 #sec-mq::before{
   content:'';position:absolute;inset:0;pointer-events:none;z-index:2;
-  background:linear-gradient(90deg,#010C05 0%,transparent 10%,transparent 90%,#010C05 100%)
+  background:linear-gradient(90deg,#071813 0%,transparent 12%,transparent 88%,#071813 100%)
 }
-.mq-head{text-align:center;padding-bottom:22px;position:relative;z-index:3}
+#sec-mq::after{
+  content:'';position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);
+  height:60px;pointer-events:none;z-index:1;
+  background:radial-gradient(ellipse 70% 100% at 50% 50%,rgba(212,168,75,.04),transparent)
+}
+.mq-head{text-align:center;padding-bottom:24px;position:relative;z-index:3}
 .mq-lbl{font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:rgba(212,168,75,.55);font-weight:600}
 .ticker-wrap{overflow:hidden;position:relative;z-index:3}
 .ticker-track{display:flex;align-items:center;width:max-content;animation:mqs 44s linear infinite;will-change:transform}
 .ticker-track:hover{animation-play-state:paused}
-.ticker-item{width:180px;height:68px;flex-shrink:0;display:flex;align-items:center;justify-content:center;padding:0 26px}
-.ticker-logo{max-width:130px;max-height:46px;width:auto;height:auto;object-fit:contain;
-opacity:.65;transition:opacity .35s;display:block}
+.ticker-item{height:72px;flex-shrink:0;display:flex;align-items:center;justify-content:center;
+  padding:0 20px 0 20px;margin:0 6px;
+  background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.07);
+  border-radius:10px;transition:background .3s,border-color .3s}
+.ticker-item:hover{background:rgba(255,255,255,.09);border-color:rgba(212,168,75,.2)}
+.ticker-logo{max-width:120px;max-height:40px;width:auto;height:auto;object-fit:contain;
+  opacity:.7;transition:opacity .3s;display:block}
 .ticker-item:hover .ticker-logo{opacity:1}
 @keyframes mqs{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ══ CURTAIN LOGOS ══════════════════════════════ */
+.cc-partners{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;
+  margin-top:18px;opacity:0;animation:curtX .6s .65s var(--ease) forwards}
+.cc-plogo{height:18px;object-fit:contain;filter:brightness(0) invert(1);opacity:.35}
 
 /* ══ PROFIL ════════════════════════════════════ */
 #sec-profil{position:relative;background:radial-gradient(ellipse 110% 85% at 50% 30%,var(--bg3) 0%,var(--bg) 65%);padding:96px 24px;overflow:hidden}
@@ -310,8 +324,17 @@ position:relative;overflow:hidden;transition:color .35s}
   <img class="cl" src="https://raw.githubusercontent.com/Villasjovik/thefriendlyhome/main/villasjovik_logga.webp" alt="Villa Sjövik"/>
   <span class="cx">&times;</span>
   <span class="cl-brand">Klinta</span>
+  <div class="cc-partners">
+    <img class="cc-plogo" src="https://villasjovik.github.io/velux/logos/lexington.png" alt="Lexington">
+    <img class="cc-plogo" src="https://villasjovik.github.io/velux/logos/segway.png" alt="Segway">
+    <img class="cc-plogo" src="https://villasjovik.github.io/velux/logos/nuura.png" alt="Nuura">
+    <img class="cc-plogo" src="https://villasjovik.github.io/velux/logos/mille_notti.avif" alt="Mille Notti">
+    <img class="cc-plogo" src="https://villasjovik.github.io/velux/logos/tinekhome.jpg" alt="TineK Home">
+    <img class="cc-plogo" src="https://villasjovik.github.io/velux/logos/vedum.png" alt="Vedum">
+  </div>
 </div>
 
+<div id="pwrap">
 <!-- ══ HERO ══════════════════════════════════════════ -->
 <section id="sec-hero">
   <div class="h-orb h-orb-1" aria-hidden="true"></div>
@@ -559,6 +582,8 @@ position:relative;overflow:hidden;transition:color .35s}
   </div>
 </section>
 
+</div><!-- /pwrap -->
+
 <!-- ══ JS ══════════════════════════════════════════ -->
 <script>
 'use strict';
@@ -593,7 +618,7 @@ gsap.registerPlugin(ScrollTrigger);
 // Velocity skew
 let skewTarget=0;
 ScrollTrigger.create({onUpdate:s=>{skewTarget=Math.max(-6,Math.min(6,s.getVelocity()/600))}});
-gsap.to('body',{skewY:()=>skewTarget,ease:'power3',overwrite:'auto',duration:.6,repeat:-1,
+gsap.to('#pwrap',{skewY:()=>skewTarget,ease:'power3',overwrite:'auto',duration:.6,repeat:-1,
   onRepeat(){skewTarget*=.92;if(Math.abs(skewTarget)<.01)skewTarget=0}});
 
 // Parallax text
