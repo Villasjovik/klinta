@@ -13,8 +13,8 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --bg:    #021A0E;
-  --bg2:   #063B1E;
-  --bg3:   #0B5228;
+  --bg2:   #032B16;
+  --bg3:   #063B1E;
   --brn:   #18130F;
   --brn2:  #231E18;
   --gold:  #D4A84B;
@@ -70,7 +70,7 @@ body.ready #cc{opacity:0}
 /* ══ HERO ══════════════════════════════════════ */
 #sec-hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;
 text-align:center;overflow:hidden;
-background:radial-gradient(ellipse 120% 90% at 50% 40%,var(--bg3) 0%,var(--bg) 65%)}
+background:radial-gradient(ellipse 90% 80% at 50% 50%,var(--bg3) 0%,var(--bg) 70%)}
 .h-orb{position:absolute;border-radius:50%;filter:blur(110px);pointer-events:none;animation:orbf 20s ease-in-out infinite}
 .h-orb-1{width:700px;height:700px;background:radial-gradient(circle,rgba(0,122,62,.38),transparent);top:-220px;right:-150px}
 .h-orb-2{width:500px;height:500px;background:radial-gradient(circle,rgba(212,168,75,.15),transparent);bottom:-150px;left:-150px;animation-delay:-10s}
@@ -119,7 +119,7 @@ max-width:720px;margin-bottom:56px}
 @keyframes mqs{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* ══ PROFIL ════════════════════════════════════ */
-#sec-profil{position:relative;background:radial-gradient(ellipse 110% 85% at 50% 30%,var(--bg3) 0%,var(--bg) 65%);padding:96px 24px;overflow:hidden}
+#sec-profil{position:relative;background:var(--bg2);padding:96px 24px;overflow:hidden}
 .p-orb{position:absolute;border-radius:50%;filter:blur(120px);pointer-events:none}
 .p-orb-1{width:500px;height:500px;background:radial-gradient(circle,rgba(1,142,71,.22),transparent);top:-150px;right:-100px;animation:orbf 28s ease-in-out infinite}
 .p-orb-2{width:400px;height:400px;background:radial-gradient(circle,rgba(212,168,75,.1),transparent);bottom:-120px;left:-100px;animation:orbf 22s ease-in-out infinite;animation-delay:-11s}
